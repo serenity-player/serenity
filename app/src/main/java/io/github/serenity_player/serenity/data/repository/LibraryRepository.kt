@@ -70,7 +70,7 @@ class LibraryRepository(private val api: SpotifyApi) {
         map = { d ->
             val page = d.artists
             val next = page.cursors?.after
-            PageResult.Success(page.items.map { it.toDomain() }, hasNext = page.next != null && next != null, after = next)
+            PageResult.Success(page.items.mapNotNull { it.toDomain() }, hasNext = page.next != null && next != null, after = next)
         },
     )
 
