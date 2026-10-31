@@ -1,0 +1,50 @@
+name: Bug report
+description: Something isn't working
+labels: [bug]
+body:
+  - type: checkboxes
+    attributes:
+      label: Before you file
+      options:
+        - label: I read docs/TROUBLESHOOTING.md
+          required: true
+        - label: I did not paste my Client ID, tokens or any other secret below
+          required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open Library\n2. Tap a playlist\n3. ..."
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Serenity version
+      description: Open the ⋮ menu on Now Playing, then About.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and Android version
+      placeholder: Pixel 8, Android 15
+    validations:
+      required: true
+  - type: dropdown
+    id: playing
+    attributes:
+      label: Where is Spotify playing?
+      options: [Phone, Computer, Speaker or TV, Nothing active, Not sure]
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots (optional)
+      description: Remove anything personal first.
